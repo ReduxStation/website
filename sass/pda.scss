@@ -371,13 +371,27 @@ body {
 
   .banner-head {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 8px;
+    align-items: center;
+    gap: 10px;
     font-family: "MS Sans Serif", Tahoma, sans-serif;
     font-size: 11px;
     font-weight: bold;
     color: $pda-title;
+    min-width: 0;
+  }
+
+  .banner-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  .banner-head-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     min-width: 0;
   }
 
@@ -402,6 +416,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    // Zig-zag: indent the lower rows so they align with the text column
+    // sitting to the right of the 32px icon + 10px gap.
+    padding-left: 42px;
   }
 
   .version { color: $log-say; }
@@ -470,9 +487,26 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  // No `overflow: hidden` here — it was clipping the status-dot's box-shadow
+  // on the left edge, which made the round dot look like a square.
+}
+
+.status-bar .status-left .status-text,
+.status-bar .status-right .playercount {
+  // The text content can ellipsize on long content, but its parent must NOT
+  // overflow:hidden because that clips the sibling status-dot's halo.
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.status-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .status-dot {
@@ -482,6 +516,9 @@ body {
   background: $log-system;
   flex-shrink: 0;
   display: inline-block;
+  // Margin so the glow halo on .online does not get cut off by the parent's
+  // edge. The dot is the first child of .status-right.
+  margin-left: 4px;
 
   &.online { background: $log-say; box-shadow: 0 0 4px $log-say; }
   &.offline { background: $log-attack; }

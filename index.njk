@@ -94,11 +94,14 @@
         {% for server in servers %}
           <a class="gamebanner loading" id="{{ server.identifier }}" data-server="{{ server.identifier }}" href="byond://{{ server.public_address }}">
             <div class="banner-head">
-              <span class="banner-name">{{ server.name }}</span>
-              <span class="banner-address">{{ server.public_address }}</span>
+              <img class="banner-icon" src="/assets/img/icons/joystick-4.png?v={% buildId %}" alt="" aria-hidden="true" width="32" height="32">
+              <div class="banner-head-text">
+                <span class="banner-name">{{ server.name }}</span>
+                <span class="version">Loading...</span>
+              </div>
             </div>
             <div class="banner-body">
-              <span class="version">Loading...</span>
+              <span class="banner-address">{{ server.public_address }}</span>
               <span class="map">&nbsp;</span>
               <span class="status">&nbsp;</span>
               <span class="revision">&nbsp;</span>
@@ -123,8 +126,14 @@
   </div>
 
   <div class="status-bar">
-    <div class="status-left">Connected to <strong>{{ site.domain }}</strong></div>
-    <div class="status-right"><span class="status-dot offline" aria-hidden="true"></span><span class="playercount">checking...</span></div>
+    <div class="status-left">
+      <img class="status-icon" src="/assets/img/icons/joystick-3.png?v={% buildId %}" alt="" aria-hidden="true" width="16" height="16">
+      <span class="status-text">Connected to <strong>{{ site.domain }}</strong></span>
+    </div>
+    <div class="status-right">
+      <span class="status-dot offline" aria-hidden="true"></span>
+      <span class="playercount">checking...</span>
+    </div>
   </div>
 </main>
 
