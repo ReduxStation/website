@@ -1,6 +1,6 @@
 - label: Home
   url: /
-  icon: home.png
+  icon: homepage_alt.png
 - label: Discord
   url: https://discord.gg/wUqCpBH7Ua
   icon: discord.png
@@ -9,13 +9,13 @@
   icon: wiki.png
 - label: GitHub
   url: https://github.com/ReduxStation/ReduxStation
-  icon: github.png
+  icon: regedit_binary-0.png
 - label: StatBus
   url: https://stats.reduxstation.com
-  icon: statbus.png
+  icon: chart1-4.png
 - label: Logs
   url: https://logs.reduxstation.com
-  icon: logs.png
+  icon: globe_map-0.png
 - label: WebMap
   url: https://map.reduxstation.com
-  icon: webmap.png
+  icon: globe_map-0.png
