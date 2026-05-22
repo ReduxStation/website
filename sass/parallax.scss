@@ -60,6 +60,10 @@
 }
 .parallax-layer[data-layer="7"] {
   background-image: url("../img/parallax/parallax_asteroids.png");
+  // Source PNG is 480x480; doubling it to 960x960 makes the repeat
+  // happen at a much larger interval so the tile pattern is far less
+  // obvious to the eye on wide / tall viewports.
+  background-size: 960px 960px;
   z-index: 7;
   opacity: 0.4;
 }

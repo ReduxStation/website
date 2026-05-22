@@ -416,9 +416,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    // Zig-zag: indent the lower rows so they align with the text column
-    // sitting to the right of the 32px icon + 10px gap.
-    padding-left: 42px;
+    // No indent. The joystick icon only displaces the two head lines
+    // (name + version); body lines start back at the card's left edge.
   }
 
   .version { color: $log-say; }

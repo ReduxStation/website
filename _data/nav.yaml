@@ -15,7 +15,7 @@
   icon: chart1-4.png
 - label: Logs
   url: https://logs.reduxstation.com
-  icon: globe_map-0.png
+  icon: network_drive-2.png
 - label: WebMap
   url: https://map.reduxstation.com
   icon: globe_map-0.png
